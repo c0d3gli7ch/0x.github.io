@@ -4,8 +4,8 @@ jobs:
   MY_ACTIONS_ENV:
     runs-on: ubuntu-latest
     steps:
-      env:
-        $MY_ACTIONS: ${{ github.actions }}
       - name: "MY STEP"
         run: echo "$MY_ACTIONS"
+        env:
+          $MY_ACTIONS: ${{ github.actions }}
         
