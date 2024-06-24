@@ -1,8 +1,13 @@
-name: Schedule
+name: Schedule (Multi Event)
 on: 
   schedule:
     - cron: '*/2 * * * *'
-
+  issues:
+    branches: 
+      - workflow-test-branch
+  push:
+    branches:
+      - gh-pages
 jobs: 
   hello_world: 
     runs-on: ubuntu-latest
