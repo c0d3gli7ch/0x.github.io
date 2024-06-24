@@ -1,12 +1,11 @@
-name: Schedule
-on: 
-  schedule:
-    - cron: '*/2 * * * *'
-
-jobs: 
-  hello_world: 
+name: CONTEXT
+on: push
+jobs:
+  MY_ACTIONS_ENV:
     runs-on: ubuntu-latest
     steps:
-      - name: Echo Current Time
-        run: echo "THE CURRENT SERVER TIME OF THE SERVER $(hostname) is $(date)"
-  
+      env:
+        $MY_ACTIONS: ${{ github.actions }}
+      - name: "MY STEP"
+        run: echo "$MY_ACTIONS"
+        
